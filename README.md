@@ -33,12 +33,12 @@
 
     Event bubbling is a type of event propagation in which an event first triggers on the innermost target element (the one the user interacted with), and then bubbles up through its ancestors in the DOM hierarchy — eventually reaching the outermost elements, like the document or window.
 
-   ``js
-  // Bubbling phase (default)
-  parent.addEventListener("click", function () {
-    console.log("Parent");
-  });
-   ``
+   ```js
+     // Bubbling phase (default)
+     parent.addEventListener("click", function () {
+       console.log("Parent");
+     });
+   ```
 
 8. 
 
