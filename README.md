@@ -119,7 +119,16 @@
 ## Node
 
 1. What is Node.js and why is it used?
-
+   
       Node.js is an open-source, cross-platform JavaScript runtime environment that executes code outside of a web browser. It is built on V8, the same JavaScript engine within Chrome, and optimized for high performance. This environment, coupled with an event-driven, non-blocking I/O framework, is tailored for server-side web development and more.
+   
+3. How does Node.js handle child threads?
+4. Describe the event-driven programming in Node.js.
+5. What is the event loop in Node.js?
+6. What is the difference between Node.js and traditional web server technologies?
+7. Explain what "non-blocking" means in Node.js.
+8. What is "npm" and what is it used for?
+
+
 
 ## Git
