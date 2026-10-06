@@ -125,17 +125,63 @@
     async/await is syntactic sugar built on top of Promises. Promises are handled using methods such as .then(), .catch(), and .finally(), while async/await allows asynchronous code to be written in a more synchronous-looking style. An async function always returns a Promise, and await pauses that async function until the Promise settles without blocking the JavaScript thread.
 
 24. What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?
+
+    Promise.all() waits for all promises and rejects as soon as one rejects, so it’s useful when every operation is required. Promise.race() settles as soon as the first promise settles, whether fulfilled or rejected. Promise.allSettled() waits for every promise to settle and returns the status and result of each one, making it useful when individual failures shouldn’t stop us from receiving the other results.
+
 25. How does JavaScript handle asynchronous operations?
+
+    JavaScript is single-threaded, so it uses the event loop to handle asynchronous operations without blocking the main thread. Asynchronous work is handled by the JavaScript runtime, such as Web APIs in a browser or Node.js APIs. Once the operation is ready, its callback or Promise continuation is placed into a task queue. The event loop moves it to the call stack when the stack is empty, with microtasks such as Promise callbacks being processed before the next macrotask.
+
 26. What is callback hell, and how can you avoid it?
+
+    Callback hell occurs when multiple asynchronous operations are nested inside each other’s callbacks, making the code difficult to read, maintain, and handle errors in. It can be avoided by using Promises with chaining, async/await with try/catch, and by breaking complex callback logic into separate functions.
+
 27. What is the difference between map(), filter(), and reduce()?
+
+    map() transforms every element and returns a new array with the same length. filter() returns a new array containing only elements that satisfy a condition. reduce() processes the array and accumulates the elements into a single result, which can be a number, object, array, or another data structure.
+
 28. What is the difference between forEach() and map()?
+
+    forEach() is mainly used for performing side effects on each array element and returns undefined, while map() transforms each element and returns a new array containing the results. I use map() when I need the transformed data and forEach() when I simply need to perform an action for each item.
+
 29. How does the sort() method work?
+
+    sort() sorts the elements of an array and mutates the original array. By default, it converts elements to strings and sorts them lexicographically, so for numbers I usually provide a comparator such as (a, b) => a - b. If I don’t want to mutate the original array, I can use toSorted() or create a copy before sorting.
+
 30. How do you remove duplicate elements from an array?
+
+    The simplest way to remove duplicates from an array is to use a Set, because a Set only stores unique values. For example, [...new Set(array)]. If I’m dealing with objects, I would usually use a Map or filter() based on a unique property such as an id.
+
 31. How do you flatten a nested array?
+
+    I would normally use flat() to flatten a nested array. By default, it flattens one level, but I can specify a depth such as flat(2) or use flat(Infinity) to flatten all levels. If I need to implement it myself, I can use reduce(
+
+    ~~~js
+    function flatten(array) {
+      return array.reduce((result, item) => {
+         if (Array.isArray(item)) {
+         return result.concat(flatten(item));
+        }
+
+        return result.concat(item);
+       }, []);
+     }
+     ~~~
+
 32. How do you group an array of objects by a property?
+
+    I can group an array of objects by a property using reduce(). I use the property value as a key in the accumulator, create an array if that group doesn’t exist, and then push the object into it. In modern JavaScript, I can also use Object.groupBy(), which provides a more concise built-in solution.
+
 33. What is a prototype in JavaScript?
+
+    A prototype is an object that JavaScript objects can inherit properties and methods from. When a property or method isn’t found directly on an object, JavaScript searches its prototype and continues up the prototype chain. JavaScript uses prototype-based inheritance, and even ES6 classes use prototypes behind the scenes.
+
 34. What is the difference between call(), apply(), and bind()?
+
+
 35. What is memoization, and how would you implement it?
+
+    Memoization is an optimization technique where we cache the result of a function based on its input. When the function is called again with the same input, we return the cached result instead of recalculating it. I would typically implement it using a closure and a Map to store the arguments and results. It’s most useful for expensive, pure functions, but it increases memory usage because of the cache.
 
 ## TypeScript
 
