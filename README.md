@@ -85,28 +85,30 @@
       Heap(Or memory heap) is the memory location where objects are stored when we define variables. i.e, This is the place where all the memory allocations and de-allocation take place. Both heap and call-stack are two containers of JS runtime. Whenever runtime comes across variables and function declarations in the code it stores them in the Heap.
          
 14. What is the difference between var, let, and const?
-15. What is hoisting in JavaScript?
-16. What is a closure, and when would you use it?
-17. What is the difference between == and ===?
-18. What is the difference between null and undefined?
-19. What is the difference between primitive and reference types?
-20. What is the difference between shallow copy and deep copy?
-21. How does the this keyword work in JavaScript?
-22. What is the difference between arrow functions and regular functions?
-23. What is the difference between microtasks and macrotasks?
-24. What is the difference between async/await and Promises?
-25. What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?
-26. How does JavaScript handle asynchronous operations?
-27. What is callback hell, and how can you avoid it?
-28. What is the difference between map(), filter(), and reduce()?
-29. What is the difference between forEach() and map()?
-30. How does the sort() method work?
-31. How do you remove duplicate elements from an array?
-32. How do you flatten a nested array?
-33. How do you group an array of objects by a property?
-34. What is a prototype in JavaScript?
-35. What is the difference between call(), apply(), and bind()?
-36. What is memoization, and how would you implement it?
+
+     var is function-scoped and can be redeclared and reassigned. let and const are block-scoped; let can be reassigned, while const cannot. let and const are also subject to the Temporal Dead Zone.
+
+15. What is a closure, and when would you use it?
+16. What is the difference between == and ===?
+17. What is the difference between null and undefined?
+18. What is the difference between primitive and reference types?
+19. What is the difference between shallow copy and deep copy?
+20. How does the this keyword work in JavaScript?
+21. What is the difference between arrow functions and regular functions?
+22. What is the difference between microtasks and macrotasks?
+23. What is the difference between async/await and Promises?
+24. What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?
+25. How does JavaScript handle asynchronous operations?
+26. What is callback hell, and how can you avoid it?
+27. What is the difference between map(), filter(), and reduce()?
+28. What is the difference between forEach() and map()?
+29. How does the sort() method work?
+30. How do you remove duplicate elements from an array?
+31. How do you flatten a nested array?
+32. How do you group an array of objects by a property?
+33. What is a prototype in JavaScript?
+34. What is the difference between call(), apply(), and bind()?
+35. What is memoization, and how would you implement it?
 
 ## TypeScript
 
