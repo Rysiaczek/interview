@@ -89,14 +89,41 @@
      var is function-scoped and can be redeclared and reassigned. let and const are block-scoped; let can be reassigned, while const cannot. let and const are also subject to the Temporal Dead Zone.
 
 15. What is a closure, and when would you use it?
+
+    A closure is when a function retains access to variables from its lexical scope even after the outer function has finished executing. Closures are useful for creating private state, maintaining state between function calls, callbacks, event handlers, and asynchronous operations.
+     
 16. What is the difference between == and ===?
+
+    == performs loose equality and can perform type coercion before comparing values. === performs strict equality and checks both the value and the type without coercion.
+
 17. What is the difference between null and undefined?
+
+    undefined generally means that a value hasn’t been assigned or doesn’t exist, while null is an intentional assignment representing the absence of a value. undefined is commonly produced automatically by JavaScript, whereas null is usually assigned explicitly by the developer.
+
 18. What is the difference between primitive and reference types?
+
+    Primitive values are copied by value, so assigning one primitive variable to another creates an independent value. Objects, arrays, and functions are reference values, so assigning them to another variable copies the reference to the same underlying object. Therefore, modifying the object through one reference can affect the other.
+
 19. What is the difference between shallow copy and deep copy?
+
+    A shallow copy creates a new top-level object but keeps references to nested objects, so changes to nested data can affect the original. A deep copy recursively creates independent copies of nested objects, so changes to the copy don’t affect the original.
+
 20. How does the this keyword work in JavaScript?
+
+    this is determined primarily by how a function is called. In a method call, it usually refers to the object before the dot. Regular functions get this from their invocation context, while arrow functions don’t have their own this and inherit it from the surrounding scope. call, apply, and bind can explicitly control this for regular functions.
+
 21. What is the difference between arrow functions and regular functions?
+
+    Arrow functions differ from regular functions mainly in how they handle this. Regular functions have their own this, which is determined by how they’re called, while arrow functions don’t have their own this and inherit it from the surrounding scope. Arrow functions also don’t have their own arguments object and cannot be used as constructors with new. They are especially useful for callbacks because they preserve the surrounding this.
+
 22. What is the difference between microtasks and macrotasks?
+
+    Microtasks and macrotasks are different queues used by JavaScript’s event loop. Promise callbacks and queueMicrotask are microtasks, while setTimeout, setInterval, and many DOM events are macrotasks. After the current synchronous task finishes, the event loop drains all available microtasks before starting the next macrotask. That’s why Promise callbacks usually execute before a setTimeout callback, even when the timeout is set to zero. 
+
 23. What is the difference between async/await and Promises?
+
+    async/await is syntactic sugar built on top of Promises. Promises are handled using methods such as .then(), .catch(), and .finally(), while async/await allows asynchronous code to be written in a more synchronous-looking style. An async function always returns a Promise, and await pauses that async function until the Promise settles without blocking the JavaScript thread.
+
 24. What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?
 25. How does JavaScript handle asynchronous operations?
 26. What is callback hell, and how can you avoid it?
